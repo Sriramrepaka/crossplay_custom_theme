@@ -4,6 +4,7 @@
 
 #include <BoardConfig.h>
 #include <HalGPIO.h>
+#include <InputManager.h>
 
 #include <cctype>
 #include <cstdarg>

@@ -14,6 +14,7 @@
 #include "RecentBooksStore.h"
 #include "components/CoverGridHomeUi.h"
 #include "components/themes/BaseTheme.h"
+#include "components/themes/banana/BananaTheme.h"
 #include "components/themes/lyra/Lyra3CoversTheme.h"
 #include "components/themes/lyra/LyraTheme.h"
 #include "components/themes/roundedraff/RoundedRaffTheme.h"
@@ -68,6 +69,17 @@ void UITheme::setTheme(CrossPointSettings::UI_THEME type) {
       currentTheme = std::make_unique<Lyra3CoversTheme>();
       currentMetrics = &Lyra3CoversMetrics::values;
       break;
+    case CrossPointSettings::UI_THEME::BANANA: {
+      auto theme = makeUniqueNoThrow<BananaTheme>();
+      if (!theme) {
+        LOG_ERR("UI", "OOM: Banana theme");
+        return;
+      }
+      currentTheme = std::move(theme);
+      currentMetrics = &BananaMetrics::values;
+      LOG_DBG("UI", "Using Banana theme");
+      break;
+    }
   }
   metricsValid = false;
 }

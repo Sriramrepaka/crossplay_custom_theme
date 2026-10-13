@@ -30,7 +30,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 TREE = os.path.abspath(os.path.join(HERE, "..", ".."))
 CP = os.path.join(TREE, "fs_agent", ".crosspoint")
 RECENT = os.path.join(HERE, ".recent.json")
-THEMES = {0: "classic", 1: "lyra", 2: "lyra3", 3: "roundedraff", 4: "covergrid"}
+THEMES = {0: "classic", 1: "lyra", 2: "lyra3", 3: "roundedraff", 4: "banana", 5: "covergrid"}
 CATALOG = {
     "servers": [
         {
